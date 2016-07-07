@@ -43,7 +43,6 @@ class Site extends CI_Controller {
 		$this -> load -> model("get_db");
 		$data["results"] = $this -> get_db -> getAll();
 		$this -> load -> view("view_db", $data);
-
 		// to see this view, visit /getValues
 	}
 
@@ -65,11 +64,8 @@ class Site extends CI_Controller {
 				"name" => "dylan"
 			)
 		);
-
 		$this -> get_db -> insert2($newRow);
-
 		echo "it has been added";
-
 		// to run this addition, visit /insertValues
 	}
 
@@ -93,12 +89,31 @@ class Site extends CI_Controller {
 				"name" => "bill"
 			)
 		);
-
+		$this -> get_db -> update1($newRow);
 		echo "it has been updated";
-
 		// to run this update, visit /updateValues
 	}
 
+	function deleteValues(){
+		$this -> load -> model("get_db");
+
+		// delete one row:
+		$oldRow = array(
+			"id" => "7"
+		);
+		$this -> get_db -> delete1($oldRow);
+		echo "it has been deleted";
+		// visit /deleteValues
+	}
+
+	// omg you can get rid of an entire table just by visiting this link
+	function emptyTable(){
+		$this -> load -> model("get_db");
+		$oldTable = "test";
+		$this -> get_db -> empty1($oldTable);
+		echo "emptied!";
+		// visit /emptyTable
+	}
 
 
 }

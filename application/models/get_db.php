@@ -28,4 +28,15 @@ class Get_db extends CI_Model{
 		// update_batch takes three params: db name, argument vals, and specifier - also the where value
 		$this -> db -> update_batch("test", $data, "id");
 	}
+
+	// deleting a value
+	function delete1($data){
+		$this -> db -> delete("test", $data);
+	}
+
+	// deleting a table
+	function empty1($table){
+		// empty takes one param: the table that needs to be emptied
+		$this -> db -> empty($table);
+	}
 }
