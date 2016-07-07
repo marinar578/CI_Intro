@@ -10,15 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
-	<a href="home">Home</a>
-	<a href="about">About</a>
+	<?php
+		// print_r(results);
 
-	<h2>Add</h2>
-	<p><?php echo $var1 . " + " . $var2 . " = " . $addTotal; ?></p>
-	
-	<h2>Subtract</h2>
-	<p><?php echo $var1 . " - " . $var2 . " = " . $subTotal; ?></p>
-
+		foreach($results as $row){
+			echo $row -> id;
+			echo $row -> name;
+			echo "<br />";
+		}
+	?>
 </div>
 
 </body>

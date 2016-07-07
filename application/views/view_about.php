@@ -8,16 +8,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>Welcome to About!</h1>
 
 	<a href="home">Home</a>
 	<a href="about">About</a>
 
-	<h2>Add</h2>
-	<p><?php echo $var1 . " + " . $var2 . " = " . $addTotal; ?></p>
-	
-	<h2>Subtract</h2>
-	<p><?php echo $var1 . " - " . $var2 . " = " . $subTotal; ?></p>
 
 </div>
 

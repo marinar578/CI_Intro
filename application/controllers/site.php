@@ -34,4 +34,17 @@ class Site extends CI_Controller {
 	// 	echo $this -> math -> add(2, 3);
 	// }
 
+	function about(){
+		$data['title'] = "About!";
+		$this -> load -> view("view_about", $data);
+	}
+
+	function getValues(){
+		$this -> load -> model("get_db");
+
+		$data["results"] = $this -> get_db -> getAll();
+
+		$this -> load -> view("view_db", $data);
+	}
+
 }
