@@ -41,10 +41,72 @@ class Site extends CI_Controller {
 
 	function getValues(){
 		$this -> load -> model("get_db");
-
 		$data["results"] = $this -> get_db -> getAll();
-
 		$this -> load -> view("view_db", $data);
+
+		// to see this view, visit /getValues
 	}
 
+	function insertValues(){
+		$this -> load -> model("get_db");
+
+		// // inserting one item:
+		// $newRow = array(
+		// 	"name" => "bob"
+		// );
+		// $this -> get_db -> insert1($newRow);
+
+		// inserting more than one item:
+		$newRow = array(
+			array(
+				"name" =>"sue"
+			),
+			array(
+				"name" => "dylan"
+			)
+		);
+
+		$this -> get_db -> insert2($newRow);
+
+		echo "it has been added";
+
+		// to run this addition, visit /insertValues
+	}
+
+	function updateValues(){
+		$this -> load -> model("get_db");
+
+		// // updating one row:
+		// $newRow = array(
+		// 	"name" => "angie"
+		// );
+		// $this -> get_db -> update1($newRow);
+
+		// batch updating:
+		$newRow = array(
+			array(
+				"id" => "3",
+				"name" => "marcus"
+			),
+			array(
+				"id" => "4",
+				"name" => "bill"
+			)
+		);
+
+		echo "it has been updated";
+
+		// to run this update, visit /updateValues
+	}
+
+
+
 }
+
+
+
+
+
+
+
+
